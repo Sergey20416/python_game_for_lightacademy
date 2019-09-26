@@ -8,7 +8,6 @@ from termcolor import colored
 from Player import Player
 
 
-
 class App:
     def __init__(self):
         # Массив игроков
@@ -65,7 +64,9 @@ class App:
         playersHealth = []
         currentStep = [
             self.stepIterator > 0 and
-            "Сейчас ходит: {}".format(colored(self.currentPlayer.name, 'green')) or '',
+            "Сейчас ходит: {}".format(
+                colored(self.currentPlayer.name, 'green')
+            ) or '',
             self.message
         ]
 
@@ -74,7 +75,7 @@ class App:
             if self.stepIterator > 0:
                 if self.currentPlayer.name == player.name:
                     playerName = colored(player.name, 'green')
-                else: 
+                else:
                     playerName = colored(player.name, 'yellow')
             playerNames.append(playerName)
             playersHealth.append(player.health)
@@ -168,7 +169,6 @@ class App:
                 self.step()
             else:
                 self.gameIsOn = False
-
 
 
 app = App()
