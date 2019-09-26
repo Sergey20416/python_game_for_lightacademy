@@ -55,7 +55,8 @@ class App:
 
         # Статус игры
         self.gameIsOn = False
-
+    def cls(self):
+        os.system('cls' if os.name=='nt' else 'clear')
     # Создаёт таблицу с информацией об игроках и текущем ходе
     def makeTable(self):
         self.table = ''
@@ -151,7 +152,7 @@ class App:
 
     # Рисует таблицу в консоли
     def render(self):
-        os.system('cls')
+        self.cls()
         self.makeTable()
         print(self.table)
 
